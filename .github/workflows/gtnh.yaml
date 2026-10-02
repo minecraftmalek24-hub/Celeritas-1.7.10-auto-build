@@ -23,7 +23,7 @@ jobs:
             21
 
       - name: Setup Gradle
-        uses: actions/gradle/actions/setup-gradle@v4.4.4
+        uses: gradle/actions/setup-gradle@v4
 
       - name: Build All Versions
         run: ./gradlew build
