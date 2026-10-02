@@ -82,4 +82,4 @@ YourKit is the creator of <a href="https://www.yourkit.com/java/profiler/">YourK
 <a href="https://www.yourkit.com/.net/profiler/">YourKit .NET Profiler</a>,
 and <a href="https://www.yourkit.com/youmonitor/">YourKit YouMonitor</a>.
 
-Special thanks to YourKit for providing a free license for my various open-source Minecraft projects. 
+Special thanks to YourKit for providing a free license for my various open-source Minecraft projects.
