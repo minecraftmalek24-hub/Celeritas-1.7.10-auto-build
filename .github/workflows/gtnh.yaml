@@ -1,8 +1,6 @@
 name: gtnh
-on: [push, workflow_dispatch]
-
-env:
-  CELERITAS_DISABLE_DECOMP: true
+on:
+  workflow_dispatch:
 
 jobs:
   build:
@@ -14,6 +12,7 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
+
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
@@ -22,13 +21,15 @@ jobs:
             8
             17
             21
+
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4.4.4
-      - name: Build common
-        run: ./gradlew :common:build --stacktrace
-      - name: Publish common to the GTNH maven
-        if: github.event_name == 'workflow_dispatch'
-        env:
-          MAVEN_USER: ${{ secrets.MAVEN_USER }}
-          MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
-        run: ./gradlew :common:publishMavenJavaPublicationToGtnhRepository
+        uses: actions/gradle/actions/setup-gradle@v4.4.4
+
+      - name: Build All Versions
+        run: ./gradlew build
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Celeritas-Jars
+          path: "**/build/libs/*.jar"
