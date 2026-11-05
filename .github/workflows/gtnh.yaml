@@ -26,6 +26,15 @@ jobs:
         uses: gradle/actions/setup-gradle@v4.4.4
       - name: Build common
         run: ./gradlew :common:build --stacktrace
+
+      # NEW: Uploads the compiled Celeritas Common JARs
+      - name: Upload Celeritas Common Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: celeritas-common-build
+          path: common/build/libs/*.jar
+          retention-days: 7
+
       - name: Publish common to the GTNH maven
         if: github.event_name == 'workflow_dispatch'
         env:
