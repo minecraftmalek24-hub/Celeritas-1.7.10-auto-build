@@ -46,11 +46,7 @@ Celeritas generally requires a "modernized" environment on older Minecraft versi
 with a default modded Minecraft instance. Newer Minecraft versions ship with the necessary dependencies and will not
 require any custom setup.
 
-* Forge 1.12.2 is supported out of the box on Java 8 + LWJGL 2.
-* Older versions of Minecraft require lwjgl3ify (or an equivalent) & Java 21. (This requirement will begin being relaxed in the near future.)
-* For modern (1.13+) versions, the final mod jar should run as-is in a standard instance for that version (e.g. Java 17
-or 21 are not required, unless the underlying Minecraft version itself requires them).
-
+* Forge 1.7.10 is supported out of the box on Java 8 + LWJGL 2.
 ## License
 
 Celeritas is licensed under the Lesser GNU General Public License version 3, as it only uses code from Iris 1.7,
