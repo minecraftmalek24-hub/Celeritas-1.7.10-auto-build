@@ -24,29 +24,9 @@ from Minecraft within a `:common` project. The common module is published on
 [Maven](https://maven.taumc.org/#/releases/org/embeddedt/celeritas/celeritas-common), to allow downstream projects to
 consume it without rebuilding the entire project from source. However, the production mod jars are not available on Maven.
 
-## How to build
-
-**`celeritas_target_versions` must be set when building locally, as no projects are configured by default.**
-You may want to set it in your user properties file (e.g. `~/.gradle/gradle.properties`) to avoid specifying
-it in every command-line Gradle invocation or modifying the checked-in `gradle.properties`.
-
-The fastest way to build for exactly one version target is to run `./gradlew -Pceleritas_target_versions=<version> packageJar`.
-The resulting jar file will be available
-in `build/libs/<celeritas version>`.
-
-Note: the `celeritas_target_versions` property accepts a standard Stonecutter predicate, so you can also use syntax like
-`./gradlew -Pceleritas_target_versions="<1.8.9"`.
-
-Alternatively, `celeritas_target_versions_pattern` accepts a Java regex, e.g.
-`./gradlew -Pceleritas_target_versions_pattern=.* packageJar` to build every Minecraft version at once.
-
-## How to use
-
-Celeritas generally requires a "modernized" environment on older Minecraft versions, and will not run out-of-the-box
-with a default modded Minecraft instance. Newer Minecraft versions ship with the necessary dependencies and will not
-require any custom setup.
-
-* Forge 1.7.10 is supported out of the box on Java 8 + LWJGL 2.
+## How to download and install 
+Head to the releases page and download the latest file for 1.7.10 this custom compile should generally work out of the box 
+for Java 8 LWJGL 2 then place it in your mods folder (requires forge) and launch the game note : we currently do not have a sodium style menu like the 1.12.2 version does.
 ## License
 
 Celeritas is licensed under the Lesser GNU General Public License version 3, as it only uses code from Iris 1.7,
